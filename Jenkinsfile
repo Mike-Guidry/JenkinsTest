@@ -8,6 +8,7 @@ pipeline {
 					dir
 					echo "Hi There!"
 				"""
+				bat "npm --version"
             }
         }
     }
