@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 bat """
-					npm --version
+					echo "Line 1"
 					dir
 					echo "Hi There!"
 				"""
