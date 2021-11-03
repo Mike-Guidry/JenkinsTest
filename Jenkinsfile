@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 bat 'npm --version'
-				bat 'ls'
+				bat 'dir'
             }
         }
     }
