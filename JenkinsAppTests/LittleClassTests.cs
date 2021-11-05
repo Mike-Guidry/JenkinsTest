@@ -21,13 +21,14 @@ namespace JenkinsAppTests
         }
 
         [TestMethod]
-        public void LittleMethod_ReturnsBig()
+        public void LittleMethod_ReturnsNotNull()
         {
+            //save on main
             var sut = new LittleClass();
 
             string result = sut.LittleMethod();
 
-            Assert.AreEqual("Big", result);
+            Assert.IsNotNull(result);
 
         }
     }
