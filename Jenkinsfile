@@ -13,6 +13,7 @@ pipeline {
 				bat "npm --version"
 		    
 		bat "\"${env.MSBUILD}\" -t:restore"
+		bat "\"${env.MSBUILD}\""
             }
         }
     }
