@@ -8,7 +8,6 @@ namespace JenkinsApp
     {
         static void Main(string[] args)
         {
-            build error
 
             Console.WriteLine("Hello World!");
 
