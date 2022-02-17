@@ -11,6 +11,8 @@ pipeline {
 					echo "Hi There!"
 				"""
 				bat "npm --version"
+		    
+		bat "\"${env.MSBUILD}\" -t:restore"
             }
         }
     }
