@@ -23,14 +23,16 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Deploy Test') {
+			when { branch 'development' }
             steps {
-                if (env.BRANCH_NAME == 'development') {
-					echo 'deploy to test...'
-				} 
-				else if (env.BRANCH_NAME == 'master') {
-					echo 'deploy to prod...'
-				}
+				echo 'deploy to test...'
+            }
+        }
+		stage('Deploy Prod') {
+			when { branch 'master' }
+            steps {
+				echo 'deploy to pro...'
             }
         }
     }
