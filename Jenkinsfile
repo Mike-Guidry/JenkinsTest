@@ -18,21 +18,30 @@ pipeline {
                 bat 'dotnet test JenkinsAppTests/JenkinsAppTests.csproj --logger trx'
             }
             post {
-                success {
+                always {
                     mstest()
                 }
+            }
+        }
+        stage('Deploy Dev') {
+			when { branch 'development' }
+            steps {
+                input('Deploy to dev?')
+                echo 'deploy to dev...'
             }
         }
         stage('Deploy Test') {
 			when { branch 'development' }
             steps {
-				echo 'deploy to test...'
+                input('Deploy to test?')
+                echo 'deploy to test...'
             }
         }
 		stage('Deploy Prod') {
 			when { branch 'master' }
             steps {
-				echo 'deploy to pro...'
+                input('Deploy to prod?')
+				echo 'deploy to prod...'
             }
         }
     }
