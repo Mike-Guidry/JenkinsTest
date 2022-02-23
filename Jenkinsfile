@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Mike-Guidry/JenkinsTest.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git 'https://github.com/Mike-Guidry/JenkinsTest.git'
+        //     }
+        // }
         stage('Build') {
             steps {
                 bat 'dotnet build -c Release'
