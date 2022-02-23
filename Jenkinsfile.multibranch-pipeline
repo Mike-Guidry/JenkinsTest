@@ -16,7 +16,11 @@ pipeline {
             steps {
                 bat 'if exist "JenkinsAppTests/TestResults/" rmdir /s /q "JenkinsAppTests/TestResults"'
                 bat 'dotnet test JenkinsAppTests/JenkinsAppTests.csproj --logger trx'
-                mstest()
+            }
+            post {
+                always {
+                    mstest()
+                }
             }
         }
         stage('Deploy Dev') {
