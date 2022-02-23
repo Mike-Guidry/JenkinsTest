@@ -31,5 +31,12 @@ namespace JenkinsAppTests
             Assert.IsNotNull(result);
 
         }
+
+        [TestMethod]
+        public void LittleMethod_FailingTest()
+        {
+            Assert.Fail();
+
+        }
     }
 }
